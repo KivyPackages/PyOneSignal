@@ -1,0 +1,36 @@
+[build-system]
+requires = ["uv_build>=0.11.0,<0.12.0"]
+build-backend = "uv_build"
+
+[project]
+name = "pyonesignal"
+version = "0.1.0"
+description = "A complete Pyjnius-based OneSignal Android SDK v5 wrapper for Kivy apps."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Kartavya Shukla", email = "novfensec@protonmail.com" }
+]
+keywords = ["kivy", "android", "onesignal", "push-notifications", "pyjnius"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Android",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# Core dependencies required for PyOneSignal to run
+dependencies = [
+    "pyjnius>=1.6.0",
+]
+
+[project.urls]
+Repository = "https://github.com/KivyPackages/PyOneSignal"
+Issues = "https://github.com/KivyPackages/PyOneSignal/issues"
+
+
+[tool.uv.build-backend]
+module-name = "pyonesignal"
