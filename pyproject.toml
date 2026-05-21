@@ -1,13 +1,13 @@
 [build-system]
-requires = ["uv_build>=0.11.0,<0.12.0"]
-build-backend = "uv_build"
+requires = ["ksp-builder>=0.1.0", "setuptools>=65.0.0", "wheel>=0.36.0"]
+build-backend = "ksp_builder"
 
 [project]
 name = "pyonesignal"
 version = "0.1.0"
 description = "A complete Pyjnius-based OneSignal Android SDK v5 wrapper for Kivy apps."
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.13"
 license = { text = "MIT" }
 authors = [
     { name = "Kartavya Shukla", email = "novfensec@protonmail.com" }
@@ -34,3 +34,15 @@ Issues = "https://github.com/KivyPackages/PyOneSignal/issues"
 
 [tool.uv.build-backend]
 module-name = "pyonesignal"
+
+
+[tool.uv.sources]
+ksp-builder = { git = "https://github.com/kivy-school/ksp-builder" }
+
+[tool.kivy-school.android]
+gradle_dependencies = [
+    "com.onesignal:OneSignal:[5.6.1, 5.9.99]" # Example of adding OneSignal for push notifications; adjust version as needed
+]
+permissions = [
+    "POST_NOTIFICATIONS", "INTERNET", "ACCESS_NETWORK_STATE", "WAKE_LOCK" # Example permissions; add as needed
+]
