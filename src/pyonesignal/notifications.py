@@ -16,7 +16,9 @@ class NotificationsManager:
     def request_permission(self, fallback_to_settings: bool = True):
         """Prompts the Android 13+ Push Permission dialog."""
         if is_android:
-            self._notif.requestPermission(fallback_to_settings)
+            from jnius import autoclass
+            JContinue = autoclass("com.onesignal.Continue")
+            self._notif.requestPermission(fallback_to_settings, JContinue.none())
 
     def has_permission(self) -> bool:
         """Returns True if the user has granted OS-level push permissions."""

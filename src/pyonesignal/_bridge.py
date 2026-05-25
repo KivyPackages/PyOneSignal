@@ -1,8 +1,8 @@
 import sys
 import logging
 
-logger = logging.getLogger("PyOneSignal")
-if not logger.handlers:
+Logger = logging.getLogger("PyOneSignal")
+if not Logger.handlers:
     logging.basicConfig(level=logging.INFO)
 
 is_android = hasattr(sys, "getandroidapilevel") or sys.platform == "android"
@@ -17,7 +17,7 @@ if is_android:
     JString = autoclass("java.lang.String")
 
 else:
-    logger.warning(
+    Logger.warning(
         "PyOneSignal: Running off-device. Java bridge disabled. Methods will pass silently."
     )
     Context = None
