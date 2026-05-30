@@ -1,0 +1,39 @@
+from typing import Any, ClassVar, overload
+from internal.capture.ILocationCapturer import ILocationCapturer
+from internal.controller.ILocationController import ILocationController
+from internal.permissions.LocationPermissionController import LocationPermissionController
+from pyonesignal.core.internal.application.IApplicationService import IApplicationService
+from pyonesignal.core.internal.preferences.IPreferencesService import IPreferencesService
+
+# Forward declarations for Java types we do not wrap.
+# Bound as empty classes so annotations resolve in the IDE.
+class Continuation:
+    """Forward declaration for ``kotlin.coroutines.Continuation``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlin.coroutines.Continuation')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/coroutines/Continuation/
+    """
+    ...
+
+class LocationManager:
+    def __init__(self, p0: IApplicationService, p1: ILocationCapturer, p2: ILocationController, p3: LocationPermissionController, p4: IPreferencesService) -> None: ...
+    def start(self) -> None: ...
+    def isShared(self) -> bool: ...
+    def setShared(self, p0: bool) -> None: ...
+    def onLocationPermissionChanged(self, p0: bool) -> None: ...
+    def requestPermission(self, p0: Continuation) -> Any: ...
+    @staticmethod
+    def access$startGetLocation(p0: "LocationManager", p1: Continuation) -> Any: ...
+    @staticmethod
+    def access$get_applicationService$p(p0: "LocationManager") -> IApplicationService: ...
+    @staticmethod
+    def access$get_capturer$p(p0: "LocationManager") -> ILocationCapturer: ...
+    @staticmethod
+    def access$get_locationPermissionController$p(p0: "LocationManager") -> LocationPermissionController: ...
+    @staticmethod
+    def access$backgroundLocationPermissionLogic(p0: "LocationManager", p1: bool, p2: Continuation) -> Any: ...
+

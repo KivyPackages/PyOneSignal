@@ -25,7 +25,14 @@ classifiers = [
 # Core dependencies required for PyOneSignal to run
 dependencies = [
     "pyjnius>=1.6.0",
+    "androidx",
 ]
+
+[project.optional-dependencies]
+core = ["pyonesignal-core"]
+notifications = ["pyonesignal-notifications"]
+inappmessages = ["pyonesignal-inappmessages"]
+location = ["pyonesignal-location"]
 
 [project.urls]
 Repository = "https://github.com/KivyPackages/PyOneSignal"
@@ -38,6 +45,11 @@ module-name = "pyonesignal"
 
 [tool.uv.sources]
 ksp-builder = { git = "https://github.com/kivy-school/ksp-builder" }
+androidx = { path = "../androidx" }
+pyonesignal-core = { path = "core" }
+pyonesignal-notifications = { path = "notifications" }
+pyonesignal-inappmessages = { path = "in-app-messages" }
+pyonesignal-location = { path = "location" }
 
 [tool.kivy-school.android]
 gradle_dependencies = [

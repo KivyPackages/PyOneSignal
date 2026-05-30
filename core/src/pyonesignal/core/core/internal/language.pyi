@@ -1,0 +1,6 @@
+from typing import Any, ClassVar, overload
+
+class ILanguageContext:
+    def setLanguage(self, p0: str) -> None: ...
+    def getLanguage(self) -> str: ...
+

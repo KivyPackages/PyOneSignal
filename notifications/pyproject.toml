@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyonesignal-notifications"
+version = "5.9.2"
+description = "pyjnius wrappers for OneSignal Android SDK notifications 5.9.2"
+requires-python = ">=3.11"
+dependencies = [
+  "pyjnius",
+  "pyonesignal-core",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pyonesignal"]

@@ -1,0 +1,6 @@
+from typing import Any, ClassVar, overload
+
+class ITime:
+    def getCurrentTimeMillis(self) -> int: ...
+    def getProcessUptimeMillis(self) -> int: ...
+

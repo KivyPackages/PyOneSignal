@@ -1,0 +1,6 @@
+from typing import Any, ClassVar, overload
+
+class ILocationPreferencesService:
+    def getLastLocationTime(self) -> int: ...
+    def setLastLocationTime(self, p0: int) -> None: ...
+

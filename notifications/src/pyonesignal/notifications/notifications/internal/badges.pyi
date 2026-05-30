@@ -1,0 +1,6 @@
+from typing import Any, ClassVar, overload
+
+class IBadgeCountUpdater:
+    def update(self) -> None: ...
+    def updateCount(self, p0: int) -> None: ...
+

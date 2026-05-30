@@ -1,0 +1,453 @@
+from typing import Any, ClassVar, overload
+
+# Forward declarations for Java types we do not wrap.
+# Bound as empty classes so annotations resolve in the IDE.
+class EnumEntries:
+    """Forward declaration for ``kotlin.enums.EnumEntries``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlin.enums.EnumEntries')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/enums/EnumEntries/
+    """
+    ...
+
+class InitState:
+    NOT_STARTED: ClassVar["InitState"]
+    IN_PROGRESS: ClassVar["InitState"]
+    SUCCESS: ClassVar["InitState"]
+    FAILED: ClassVar["InitState"]
+    NOT_STARTED: ClassVar["InitState"]
+    IN_PROGRESS: ClassVar["InitState"]
+    SUCCESS: ClassVar["InitState"]
+    FAILED: ClassVar["InitState"]
+    @staticmethod
+    def getEntries() -> EnumEntries: ...
+    @staticmethod
+    def values() -> Any: ...
+    @staticmethod
+    def valueOf(p0: str) -> "InitState": ...
+    def isSDKAccessible(self) -> bool: ...
+
+from typing import Any, ClassVar, overload
+from IUserJwtInvalidatedListener import IUserJwtInvalidatedListener
+from android.content.Context import Context
+from common.services.ServiceProvider import ServiceProvider
+from core.internal.config.ConfigModel import ConfigModel
+from core.internal.config.impl.IdentityVerificationService import IdentityVerificationService
+from core.internal.operations.IOperationRepo import IOperationRepo
+from core.internal.preferences.IPreferencesService import IPreferencesService
+from debug.IDebugManager import IDebugManager
+from inAppMessages.IInAppMessagesManager import IInAppMessagesManager
+from internal.InitState import InitState
+from location.ILocationManager import ILocationManager
+from notifications.INotificationsManager import INotificationsManager
+from session.ISessionManager import ISessionManager
+from user.IUserManager import IUserManager
+from user.internal.LoginHelper import LoginHelper
+from user.internal.LogoutHelper import LogoutHelper
+from user.internal.UserSwitcher import UserSwitcher
+from user.internal.identity.IdentityModelStore import IdentityModelStore
+from user.internal.jwt.JwtTokenStore import JwtTokenStore
+from user.internal.properties.PropertiesModelStore import PropertiesModelStore
+from user.internal.subscriptions.SubscriptionModelStore import SubscriptionModelStore
+
+# Forward declarations for Java types we do not wrap.
+# Bound as empty classes so annotations resolve in the IDE.
+class CoroutineDispatcher:
+    """Forward declaration for ``kotlinx.coroutines.CoroutineDispatcher``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlinx.coroutines.CoroutineDispatcher')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlinx/coroutines/CoroutineDispatcher/
+    """
+    ...
+class DefaultConstructorMarker:
+    """Forward declaration for ``kotlin.jvm.internal.DefaultConstructorMarker``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlin.jvm.internal.DefaultConstructorMarker')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/jvm/internal/DefaultConstructorMarker/
+    """
+    ...
+class Continuation:
+    """Forward declaration for ``kotlin.coroutines.Continuation``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlin.coroutines.Continuation')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/coroutines/Continuation/
+    """
+    ...
+class Function0:
+    """Forward declaration for ``kotlin.jvm.functions.Function0``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlin.jvm.functions.Function0')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/jvm/functions/Function0/
+    """
+    ...
+class CompletableDeferred:
+    """Forward declaration for ``kotlinx.coroutines.CompletableDeferred``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlinx.coroutines.CompletableDeferred')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlinx/coroutines/CompletableDeferred/
+    """
+    ...
+class Exception:
+    """Forward declaration for ``java.lang.Exception``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('java.lang.Exception')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html
+    """
+    ...
+
+class OneSignalImp:
+    @overload
+    def __init__(self, p0: CoroutineDispatcher) -> None: ...
+    @overload
+    def __init__(self) -> None: ...
+    @overload
+    def __init__(self, p0: CoroutineDispatcher, p1: int, p2: DefaultConstructorMarker) -> None: ...
+    def logout(self) -> None: ...
+    @overload
+    def login(self, p0: str, p1: str) -> None: ...
+    @overload
+    def login(self, p0: str) -> None: ...
+    def getSdkVersion(self) -> str: ...
+    @overload
+    def getDisableGMSMissingPrompt(self) -> bool: ...
+    @overload
+    def getDisableGMSMissingPrompt(self, p0: Continuation) -> Any: ...
+    def isInitialized(self) -> bool: ...
+    @overload
+    def getUser(self) -> IUserManager: ...
+    @overload
+    def getUser(self, p0: Continuation) -> Any: ...
+    @overload
+    def getSession(self, p0: Continuation) -> Any: ...
+    @overload
+    def getSession(self) -> ISessionManager: ...
+    @overload
+    def getNotifications(self) -> INotificationsManager: ...
+    @overload
+    def getNotifications(self, p0: Continuation) -> Any: ...
+    @overload
+    def getInAppMessages(self, p0: Continuation) -> Any: ...
+    @overload
+    def getInAppMessages(self) -> IInAppMessagesManager: ...
+    @overload
+    def getConsentRequired(self, p0: Continuation) -> Any: ...
+    @overload
+    def getConsentRequired(self) -> bool: ...
+    @overload
+    def setConsentRequired(self, p0: bool) -> None: ...
+    @overload
+    def setConsentRequired(self, p0: bool, p1: Continuation) -> Any: ...
+    @overload
+    def getConsentGiven(self, p0: Continuation) -> Any: ...
+    @overload
+    def getConsentGiven(self) -> bool: ...
+    @overload
+    def setConsentGiven(self, p0: bool, p1: Continuation) -> Any: ...
+    @overload
+    def setConsentGiven(self, p0: bool) -> None: ...
+    @overload
+    def setDisableGMSMissingPrompt(self, p0: bool, p1: Continuation) -> Any: ...
+    @overload
+    def setDisableGMSMissingPrompt(self, p0: bool) -> None: ...
+    @overload
+    def initWithContext(self, p0: Context, p1: str) -> bool: ...
+    @overload
+    def initWithContext(self, p0: Context, p1: Continuation) -> Any: ...
+    def updateUserJwt(self, p0: str, p1: str) -> None: ...
+    def addUserJwtInvalidatedListener(self, p0: IUserJwtInvalidatedListener) -> None: ...
+    def removeUserJwtInvalidatedListener(self, p0: IUserJwtInvalidatedListener) -> None: ...
+    def initWithContextSuspend(self, p0: Context, p1: str, p2: Continuation) -> Any: ...
+    def loginSuspend(self, p0: str, p1: str, p2: Continuation) -> Any: ...
+    def logoutSuspend(self, p0: Continuation) -> Any: ...
+    def updateUserJwtSuspend(self, p0: str, p1: str, p2: Continuation) -> Any: ...
+    @overload
+    def getLocation(self, p0: Continuation) -> Any: ...
+    @overload
+    def getLocation(self) -> ILocationManager: ...
+    def getDebug(self) -> IDebugManager: ...
+    @staticmethod
+    def access$getServices$p(p0: "OneSignalImp") -> ServiceProvider: ...
+    def hasService(self, p0: type) -> bool: ...
+    def getAllServices(self, p0: type) -> list: ...
+    @staticmethod
+    def access$getConfigModel(p0: "OneSignalImp") -> ConfigModel: ...
+    @staticmethod
+    def access$get_consentRequired$p(p0: "OneSignalImp") -> bool: ...
+    @staticmethod
+    def access$get_consentGiven$p(p0: "OneSignalImp") -> bool: ...
+    @staticmethod
+    def access$get_disableGMSMissingPrompt$p(p0: "OneSignalImp") -> bool: ...
+    @staticmethod
+    def access$internalInit(p0: "OneSignalImp", p1: Context, p2: str) -> bool: ...
+    @staticmethod
+    def access$getLoginHelper(p0: "OneSignalImp") -> LoginHelper: ...
+    @staticmethod
+    def access$getLogoutHelper(p0: "OneSignalImp") -> LogoutHelper: ...
+    @staticmethod
+    def access$waitUntilInitInternal(p0: "OneSignalImp", p1: str, p2: Continuation) -> Any: ...
+    @staticmethod
+    def access$suspendUntilInit(p0: "OneSignalImp", p1: str, p2: Continuation) -> Any: ...
+    @staticmethod
+    def access$suspendAndReturn(p0: "OneSignalImp", p1: Function0, p2: Continuation) -> Any: ...
+    @staticmethod
+    def access$set_consentRequired$p(p0: "OneSignalImp", p1: bool) -> None: ...
+    @staticmethod
+    def access$set_consentGiven$p(p0: "OneSignalImp", p1: bool) -> None: ...
+    @staticmethod
+    def access$getOperationRepo(p0: "OneSignalImp") -> IOperationRepo: ...
+    @staticmethod
+    def access$set_disableGMSMissingPrompt$p(p0: "OneSignalImp", p1: bool) -> None: ...
+    @staticmethod
+    def access$getInitLock$p(p0: "OneSignalImp") -> Any: ...
+    @staticmethod
+    def access$getInitState$p(p0: "OneSignalImp") -> InitState: ...
+    @staticmethod
+    def access$getSuspendCompletion$p(p0: "OneSignalImp") -> CompletableDeferred: ...
+    @staticmethod
+    def access$setInitState$p(p0: "OneSignalImp", p1: InitState) -> None: ...
+    @staticmethod
+    def access$setSuspendCompletion$p(p0: "OneSignalImp", p1: CompletableDeferred) -> None: ...
+    @staticmethod
+    def access$setInitFailureException$p(p0: "OneSignalImp", p1: Exception) -> None: ...
+    @staticmethod
+    def access$getJwtTokenStore(p0: "OneSignalImp") -> JwtTokenStore: ...
+    @staticmethod
+    def access$getIdentityModelStore(p0: "OneSignalImp") -> IdentityModelStore: ...
+    @staticmethod
+    def access$getPropertiesModelStore(p0: "OneSignalImp") -> PropertiesModelStore: ...
+    @staticmethod
+    def access$getSubscriptionModelStore(p0: "OneSignalImp") -> SubscriptionModelStore: ...
+    @staticmethod
+    def access$getPreferencesService(p0: "OneSignalImp") -> IPreferencesService: ...
+    @staticmethod
+    def access$getUserSwitcher(p0: "OneSignalImp") -> UserSwitcher: ...
+    @staticmethod
+    def access$getLoginLogoutLock$p(p0: "OneSignalImp") -> Any: ...
+    @staticmethod
+    def access$getIdentityVerificationService(p0: "OneSignalImp") -> IdentityVerificationService: ...
+    def getService(self, p0: type) -> Any: ...
+    def getServiceOrNull(self, p0: type) -> Any: ...
+
+    class WhenMappings:
+        $EnumSwitchMapping$0: ClassVar[Any]
+
+from typing import Any, ClassVar, overload
+from debug.LogLevel import LogLevel
+
+# Forward declarations for Java types we do not wrap.
+# Bound as empty classes so annotations resolve in the IDE.
+class DefaultConstructorMarker:
+    """Forward declaration for ``kotlin.jvm.internal.DefaultConstructorMarker``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlin.jvm.internal.DefaultConstructorMarker')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/jvm/internal/DefaultConstructorMarker/
+    """
+    ...
+
+class OtelConfig:
+    Companion: ClassVar[Any]
+    def __init__(self, p0: bool, p1: LogLevel) -> None: ...
+    def getLogLevel(self) -> LogLevel: ...
+    @staticmethod
+    def access$getDISABLED$cp() -> "OtelConfig": ...
+    def equals(self, p0: Any) -> bool: ...
+    def toString(self) -> str: ...
+    def hashCode(self) -> int: ...
+    def isEnabled(self) -> bool: ...
+    def copy(self, p0: bool, p1: LogLevel) -> "OtelConfig": ...
+    def component1(self) -> bool: ...
+    def component2(self) -> LogLevel: ...
+    @staticmethod
+    def copy$default(p0: "OtelConfig", p1: bool, p2: LogLevel, p3: int, p4: Any) -> "OtelConfig": ...
+
+    class Companion:
+        def __init__(self, p0: DefaultConstructorMarker) -> None: ...
+        def getDISABLED(self) -> "OtelConfig": ...
+
+from typing import Any, ClassVar, overload
+from debug.LogLevel import LogLevel
+
+# Forward declarations for Java types we do not wrap.
+# Bound as empty classes so annotations resolve in the IDE.
+class DefaultConstructorMarker:
+    """Forward declaration for ``kotlin.jvm.internal.DefaultConstructorMarker``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlin.jvm.internal.DefaultConstructorMarker')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/jvm/internal/DefaultConstructorMarker/
+    """
+    ...
+
+class OtelConfigAction:
+    def __init__(self, p0: DefaultConstructorMarker) -> None: ...
+
+    class Disable:
+        INSTANCE: ClassVar[Any]
+
+    class Enable:
+        def __init__(self, p0: LogLevel) -> None: ...
+        def getLogLevel(self) -> LogLevel: ...
+        def equals(self, p0: Any) -> bool: ...
+        def toString(self) -> str: ...
+        def hashCode(self) -> int: ...
+        def copy(self, p0: LogLevel) -> Any: ...
+        def component1(self) -> LogLevel: ...
+        @staticmethod
+        def copy$default(p0: Any, p1: LogLevel, p2: int, p3: Any) -> Any: ...
+
+    class NoChange:
+        INSTANCE: ClassVar[Any]
+
+    class UpdateLogLevel:
+        def __init__(self, p0: LogLevel, p1: LogLevel) -> None: ...
+        def equals(self, p0: Any) -> bool: ...
+        def toString(self) -> str: ...
+        def hashCode(self) -> int: ...
+        def copy(self, p0: LogLevel, p1: LogLevel) -> Any: ...
+        def component1(self) -> LogLevel: ...
+        def component2(self) -> LogLevel: ...
+        @staticmethod
+        def copy$default(p0: Any, p1: LogLevel, p2: LogLevel, p3: int, p4: Any) -> Any: ...
+        def getOldLevel(self) -> LogLevel: ...
+        def getNewLevel(self) -> LogLevel: ...
+
+from typing import Any, ClassVar, overload
+from internal.OtelConfig import OtelConfig
+from internal.OtelConfigAction import OtelConfigAction
+
+class OtelConfigEvaluator:
+    INSTANCE: ClassVar["OtelConfigEvaluator"]
+    def evaluate(self, p0: OtelConfig, p1: OtelConfig) -> OtelConfigAction: ...
+
+from typing import Any, ClassVar, overload
+from android.content.Context import Context
+from common.modeling.Model import Model
+from common.modeling.ModelChangedArgs import ModelChangedArgs
+from core.internal.config.ConfigModel import ConfigModel
+from core.internal.config.ConfigModelStore import ConfigModelStore
+
+# Forward declarations for Java types we do not wrap.
+# Bound as empty classes so annotations resolve in the IDE.
+class Function0:
+    """Forward declaration for ``kotlin.jvm.functions.Function0``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlin.jvm.functions.Function0')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/jvm/functions/Function0/
+    """
+    ...
+class Function3:
+    """Forward declaration for ``kotlin.jvm.functions.Function3``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlin.jvm.functions.Function3')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/jvm/functions/Function3/
+    """
+    ...
+class Function4:
+    """Forward declaration for ``kotlin.jvm.functions.Function4``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlin.jvm.functions.Function4')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/jvm/functions/Function4/
+    """
+    ...
+class Function1:
+    """Forward declaration for ``kotlin.jvm.functions.Function1``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlin.jvm.functions.Function1')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/jvm/functions/Function1/
+    """
+    ...
+class Function2:
+    """Forward declaration for ``kotlin.jvm.functions.Function2``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlin.jvm.functions.Function2')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/jvm/functions/Function2/
+    """
+    ...
+class DefaultConstructorMarker:
+    """Forward declaration for ``kotlin.jvm.internal.DefaultConstructorMarker``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('kotlin.jvm.internal.DefaultConstructorMarker')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+
+    See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/jvm/internal/DefaultConstructorMarker/
+    """
+    ...
+
+class OtelLifecycleManager:
+    @overload
+    def __init__(self, p0: Context, p1: Function0, p2: Function3, p3: Function4, p4: Function1, p5: Function2, p6: Function0) -> None: ...
+    @overload
+    def __init__(self, p0: Context, p1: Function0, p2: Function3, p3: Function4, p4: Function1, p5: Function2, p6: Function0, p7: int, p8: DefaultConstructorMarker) -> None: ...
+    def onModelUpdated(self, p0: ModelChangedArgs, p1: str) -> None: ...
+    @overload
+    def onModelReplaced(self, p0: Model, p1: str) -> None: ...
+    @overload
+    def onModelReplaced(self, p0: ConfigModel, p1: str) -> None: ...
+    @staticmethod
+    def access$getPlatformProviderFactory$p(p0: "OtelLifecycleManager") -> Function2: ...
+    @staticmethod
+    def access$getContext$p(p0: "OtelLifecycleManager") -> Context: ...
+    @staticmethod
+    def access$getFeatureManagerProvider$p(p0: "OtelLifecycleManager") -> Function0: ...
+    @staticmethod
+    def access$getLoggerFactory$p(p0: "OtelLifecycleManager") -> Function0: ...
+    def initializeFromCachedConfig(self) -> None: ...
+    def subscribeToConfigStore(self, p0: ConfigModelStore) -> None: ...
+

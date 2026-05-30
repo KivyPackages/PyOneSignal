@@ -1,0 +1,81 @@
+from jnius import JavaClass, JavaInterface, MetaJavaClass, JavaMethod, JavaStaticMethod, JavaMultipleMethod, JavaField, JavaStaticField
+
+class AndroidOtelLogger(JavaClass, metaclass=MetaJavaClass):
+    __javaclass__ = "com/onesignal/debug/internal/logging/otel/android/AndroidOtelLogger"
+    __javaconstructor__ = [("()V", False)]
+    error = JavaMethod("(Ljava/lang/String;)V")
+    info = JavaMethod("(Ljava/lang/String;)V")
+    debug = JavaMethod("(Ljava/lang/String;)V")
+    warn = JavaMethod("(Ljava/lang/String;)V")
+
+class OtelIdResolver(JavaClass, metaclass=MetaJavaClass):
+    __javaclass__ = "com/onesignal/debug/internal/logging/otel/android/OtelIdResolver"
+    __javaconstructor__ = [("(Landroid/content/Context;)V", False)]
+    Companion = JavaStaticField("Lcom/onesignal/debug/internal/logging/otel/android/OtelIdResolver$Companion;")
+    resolveAppId = JavaMethod("()Ljava/lang/String;")
+    resolveOnesignalId = JavaMethod("()Ljava/lang/String;")
+    resolvePushSubscriptionId = JavaMethod("()Ljava/lang/String;")
+    resolveRemoteLoggingEnabled = JavaMethod("()Z")
+    resolveRemoteLogLevel = JavaMethod("()Lcom/onesignal/debug/LogLevel;")
+    resolveInstallId = JavaMethod("()Ljava/lang/String;")
+
+    class Companion(JavaClass, metaclass=MetaJavaClass):
+        __javaclass__ = "com/onesignal/debug/internal/logging/otel/android/OtelIdResolver$Companion"
+        __javaconstructor__ = [("(Lkotlin/jvm/internal/DefaultConstructorMarker;)V", False)]
+
+class OtelPlatformProvider(JavaClass, metaclass=MetaJavaClass):
+    __javaclass__ = "com/onesignal/debug/internal/logging/otel/android/OtelPlatformProvider"
+    __javaconstructor__ = [("(Lcom/onesignal/debug/internal/logging/otel/android/OtelPlatformProviderConfig;Lkotlin/jvm/functions/Function0;)V", False)]
+    getOnesignalId = JavaMethod("()Ljava/lang/String;")
+    getAppVersion = JavaMethod("()Ljava/lang/String;")
+    getAppId = JavaMethod("()Ljava/lang/String;")
+    getPushSubscriptionId = JavaMethod("()Ljava/lang/String;")
+    getMinFileAgeForReadMillis = JavaMethod("()J")
+    getCrashStoragePath = JavaMethod("()Ljava/lang/String;")
+    getRemoteLogLevel = JavaMethod("()Ljava/lang/String;")
+    isOtelExporterLoggingEnabled = JavaMethod("()Z")
+    getAppPackageId = JavaMethod("()Ljava/lang/String;")
+    getDeviceManufacturer = JavaMethod("()Ljava/lang/String;")
+    getSdkBase = JavaMethod("()Ljava/lang/String;")
+    getSdkBaseVersion = JavaMethod("()Ljava/lang/String;")
+    getInstallId = JavaMethod("(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")
+    getDeviceModel = JavaMethod("()Ljava/lang/String;")
+    getOsName = JavaMethod("()Ljava/lang/String;")
+    getOsVersion = JavaMethod("()Ljava/lang/String;")
+    getOsBuildId = JavaMethod("()Ljava/lang/String;")
+    getSdkWrapper = JavaMethod("()Ljava/lang/String;")
+    getSdkWrapperVersion = JavaMethod("()Ljava/lang/String;")
+    getEnabledFeatureFlags = JavaMethod("()Ljava/util/List;")
+    getAppState = JavaMethod("()Ljava/lang/String;")
+    getProcessUptime = JavaMethod("()J")
+    getCurrentThreadName = JavaMethod("()Ljava/lang/String;")
+    isRemoteLoggingEnabled = JavaMethod("()Z")
+    getAppIdForHeaders = JavaMethod("()Ljava/lang/String;")
+    getApiBaseUrl = JavaMethod("()Ljava/lang/String;")
+    getEnabledFeatureFlags$annotations = JavaStaticMethod("()V")
+    getRemoteLogLevel$annotations = JavaStaticMethod("()V")
+    access$getIdResolver$p = JavaStaticMethod("(Lcom/onesignal/debug/internal/logging/otel/android/OtelPlatformProvider;)Lcom/onesignal/debug/internal/logging/otel/android/OtelIdResolver;")
+
+class OtelPlatformProviderConfig(JavaClass, metaclass=MetaJavaClass):
+    __javaclass__ = "com/onesignal/debug/internal/logging/otel/android/OtelPlatformProviderConfig"
+    __javaconstructor__ = [("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Lkotlin/jvm/functions/Function0;)V", False), ("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V", False)]
+    getAppVersion = JavaMethod("()Ljava/lang/String;")
+    equals = JavaMethod("(Ljava/lang/Object;)Z")
+    toString = JavaMethod("()Ljava/lang/String;")
+    hashCode = JavaMethod("()I")
+    getContext = JavaMethod("()Landroid/content/Context;")
+    copy = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Lkotlin/jvm/functions/Function0;)Lcom/onesignal/debug/internal/logging/otel/android/OtelPlatformProviderConfig;")
+    getGetIsInForeground = JavaMethod("()Lkotlin/jvm/functions/Function0;")
+    component1 = JavaMethod("()Ljava/lang/String;")
+    component2 = JavaMethod("()Ljava/lang/String;")
+    copy$default = JavaStaticMethod("(Lcom/onesignal/debug/internal/logging/otel/android/OtelPlatformProviderConfig;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/onesignal/debug/internal/logging/otel/android/OtelPlatformProviderConfig;")
+    getCrashStoragePath = JavaMethod("()Ljava/lang/String;")
+    getAppPackageId = JavaMethod("()Ljava/lang/String;")
+    component3 = JavaMethod("()Ljava/lang/String;")
+    component4 = JavaMethod("()Landroid/content/Context;")
+    component5 = JavaMethod("()Lkotlin/jvm/functions/Function0;")
+
+class OtelPlatformProviderKt(JavaClass, metaclass=MetaJavaClass):
+    __javaclass__ = "com/onesignal/debug/internal/logging/otel/android/OtelPlatformProviderKt"
+    OTEL_EXPORTER_LOGGING_ENABLED = JavaStaticField("Z")
+    createAndroidOtelPlatformProvider = JavaStaticMethod("(Landroid/content/Context;Lkotlin/jvm/functions/Function0;)Lcom/onesignal/debug/internal/logging/otel/android/OtelPlatformProvider;")
