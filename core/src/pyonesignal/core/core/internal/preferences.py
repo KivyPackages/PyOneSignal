@@ -2,24 +2,24 @@ from jnius import JavaClass, JavaInterface, MetaJavaClass, JavaMethod, JavaStati
 
 class IPreferencesService(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/core/internal/preferences/IPreferencesService"
-    getString = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;")
     getInt = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;")
     getLong = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)Ljava/lang/Long;")
-    saveString = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V")
+    getString = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;")
     getStringSet = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)Ljava/util/Set;")
-    saveBool = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;)V")
-    saveLong = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V")
     getBool = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;)Ljava/lang/Boolean;")
+    saveBool = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;)V")
     saveInt = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V")
+    saveLong = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V")
     saveStringSet = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)V")
+    saveString = JavaMethod("(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V")
 
     class DefaultImpls(JavaClass, metaclass=MetaJavaClass):
         __javaclass__ = "com/onesignal/core/internal/preferences/IPreferencesService$DefaultImpls"
-        getString$default = JavaStaticMethod("(Lcom/onesignal/core/internal/preferences/IPreferencesService;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;")
-        getInt$default = JavaStaticMethod("(Lcom/onesignal/core/internal/preferences/IPreferencesService;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;ILjava/lang/Object;)Ljava/lang/Integer;")
-        getStringSet$default = JavaStaticMethod("(Lcom/onesignal/core/internal/preferences/IPreferencesService;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;ILjava/lang/Object;)Ljava/util/Set;")
-        getLong$default = JavaStaticMethod("(Lcom/onesignal/core/internal/preferences/IPreferencesService;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;ILjava/lang/Object;)Ljava/lang/Long;")
         getBool$default = JavaStaticMethod("(Lcom/onesignal/core/internal/preferences/IPreferencesService;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;ILjava/lang/Object;)Ljava/lang/Boolean;")
+        getInt$default = JavaStaticMethod("(Lcom/onesignal/core/internal/preferences/IPreferencesService;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;ILjava/lang/Object;)Ljava/lang/Integer;")
+        getLong$default = JavaStaticMethod("(Lcom/onesignal/core/internal/preferences/IPreferencesService;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;ILjava/lang/Object;)Ljava/lang/Long;")
+        getStringSet$default = JavaStaticMethod("(Lcom/onesignal/core/internal/preferences/IPreferencesService;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;ILjava/lang/Object;)Ljava/util/Set;")
+        getString$default = JavaStaticMethod("(Lcom/onesignal/core/internal/preferences/IPreferencesService;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;")
 
 class PreferenceOneSignalKeys(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/core/internal/preferences/PreferenceOneSignalKeys"

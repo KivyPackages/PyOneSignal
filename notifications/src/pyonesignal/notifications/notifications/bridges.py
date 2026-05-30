@@ -5,5 +5,5 @@ class OneSignalHmsEventBridge(JavaClass, metaclass=MetaJavaClass):
     INSTANCE = JavaStaticField("Lcom/onesignal/notifications/bridges/OneSignalHmsEventBridge;")
     HMS_TTL_KEY = JavaStaticField("Ljava/lang/String;")
     HMS_SENT_TIME_KEY = JavaStaticField("Ljava/lang/String;")
-    onNewToken = JavaMultipleMethod([("(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V", False, False), ("(Landroid/content/Context;Ljava/lang/String;)V", False, False)])
     onMessageReceived = JavaMethod("(Landroid/content/Context;Lcom/huawei/hms/push/RemoteMessage;)V")
+    onNewToken = JavaMultipleMethod([("(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V", False, False), ("(Landroid/content/Context;Ljava/lang/String;)V", False, False)])

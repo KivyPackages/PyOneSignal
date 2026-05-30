@@ -3,8 +3,8 @@ from jnius import JavaClass, JavaInterface, MetaJavaClass, JavaMethod, JavaStati
 class AlertDialogPrepromptForAndroidSettings(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/core/internal/permissions/AlertDialogPrepromptForAndroidSettings"
     INSTANCE = JavaStaticField("Lcom/onesignal/core/internal/permissions/AlertDialogPrepromptForAndroidSettings;")
-    dismissCurrentDialog = JavaMethod("()V")
     show = JavaMultipleMethod([("(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Lcom/onesignal/core/internal/permissions/AlertDialogPrepromptForAndroidSettings$Callback;)V", False, False), ("(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Lcom/onesignal/core/internal/permissions/AlertDialogPrepromptForAndroidSettings$Callback;Lkotlin/jvm/functions/Function0;)V", False, False)])
+    dismissCurrentDialog = JavaMethod("()V")
 
     class Callback(JavaClass, metaclass=MetaJavaClass):
         __javaclass__ = "com/onesignal/core/internal/permissions/AlertDialogPrepromptForAndroidSettings$Callback"
@@ -13,8 +13,8 @@ class AlertDialogPrepromptForAndroidSettings(JavaClass, metaclass=MetaJavaClass)
 
 class IRequestPermissionService(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/core/internal/permissions/IRequestPermissionService"
-    registerAsCallback = JavaMethod("(Ljava/lang/String;Lcom/onesignal/core/internal/permissions/IRequestPermissionService$PermissionCallback;)V")
     startPrompt = JavaMethod("(ZLjava/lang/String;Ljava/lang/String;Ljava/lang/Class;)V")
+    registerAsCallback = JavaMethod("(Ljava/lang/String;Lcom/onesignal/core/internal/permissions/IRequestPermissionService$PermissionCallback;)V")
 
     class PermissionCallback(JavaClass, metaclass=MetaJavaClass):
         __javaclass__ = "com/onesignal/core/internal/permissions/IRequestPermissionService$PermissionCallback"
@@ -30,11 +30,8 @@ class PermissionsViewModel(JavaClass, metaclass=MetaJavaClass):
     INTENT_EXTRA_PERMISSION_TYPE = JavaStaticField("Ljava/lang/String;")
     INTENT_EXTRA_ANDROID_PERMISSION_STRING = JavaStaticField("Ljava/lang/String;")
     INTENT_EXTRA_CALLBACK_CLASS = JavaStaticField("Ljava/lang/String;")
-    onRequestPermissionsResult = JavaMethod("([Ljava/lang/String;[IZ)V")
     initialize = JavaMethod("(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")
-    resetWaitingState = JavaMethod("()V")
-    shouldRequestPermission = JavaMethod("()Z")
-    recordRationaleState = JavaMethod("(Z)V")
+    onRequestPermissionsResult = JavaMethod("([Ljava/lang/String;[IZ)V")
     getShouldFinish = JavaMethod("()Lkotlinx/coroutines/flow/StateFlow;")
     getWaiting = JavaMethod("()Lkotlinx/coroutines/flow/StateFlow;")
     getPermissionRequestType = JavaMethod("()Ljava/lang/String;")
@@ -43,6 +40,9 @@ class PermissionsViewModel(JavaClass, metaclass=MetaJavaClass):
     access$shouldShowSettings = JavaStaticMethod("(Lcom/onesignal/core/internal/permissions/PermissionsViewModel;Ljava/lang/String;Z)Z")
     access$executeCallback = JavaStaticMethod("(Lcom/onesignal/core/internal/permissions/PermissionsViewModel;ZZ)V")
     access$get_shouldFinish$p = JavaStaticMethod("(Lcom/onesignal/core/internal/permissions/PermissionsViewModel;)Lkotlinx/coroutines/flow/MutableStateFlow;")
+    resetWaitingState = JavaMethod("()V")
+    shouldRequestPermission = JavaMethod("()Z")
+    recordRationaleState = JavaMethod("(Z)V")
 
     class Companion(JavaClass, metaclass=MetaJavaClass):
         __javaclass__ = "com/onesignal/core/internal/permissions/PermissionsViewModel$Companion"

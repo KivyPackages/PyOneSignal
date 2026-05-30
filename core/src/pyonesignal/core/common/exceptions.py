@@ -3,9 +3,9 @@ from jnius import JavaClass, JavaInterface, MetaJavaClass, JavaMethod, JavaStati
 class BackendException(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/common/exceptions/BackendException"
     __javaconstructor__ = [("(ILjava/lang/String;Ljava/lang/Integer;)V", False), ("(ILjava/lang/String;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V", False)]
+    getRetryAfterSeconds = JavaMethod("()Ljava/lang/Integer;")
     getStatusCode = JavaMethod("()I")
     getResponse = JavaMethod("()Ljava/lang/String;")
-    getRetryAfterSeconds = JavaMethod("()Ljava/lang/Integer;")
 
 class MainThreadException(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/common/exceptions/MainThreadException"

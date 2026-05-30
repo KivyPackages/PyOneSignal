@@ -18,9 +18,9 @@ class FCMBroadcastReceiver(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/receivers/FCMBroadcastReceiver"
     __javaconstructor__ = [("()V", False)]
     Companion = JavaStaticField("Lcom/onesignal/notifications/receivers/FCMBroadcastReceiver$Companion;")
-    onReceive = JavaMethod("(Landroid/content/Context;Landroid/content/Intent;)V")
     access$setSuccessfulResultCode = JavaStaticMethod("(Lcom/onesignal/notifications/receivers/FCMBroadcastReceiver;)V")
     access$setAbort = JavaStaticMethod("(Lcom/onesignal/notifications/receivers/FCMBroadcastReceiver;)V")
+    onReceive = JavaMethod("(Landroid/content/Context;Landroid/content/Intent;)V")
 
     class Companion(JavaClass, metaclass=MetaJavaClass):
         __javaclass__ = "com/onesignal/notifications/receivers/FCMBroadcastReceiver$Companion"

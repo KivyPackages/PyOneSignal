@@ -2,10 +2,10 @@ from jnius import JavaClass, JavaInterface, MetaJavaClass, JavaMethod, JavaStati
 
 class IBackgroundManager(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/core/internal/background/IBackgroundManager"
-    setNeedsJobReschedule = JavaMethod("(Z)V")
-    cancelRunBackgroundServices = JavaMethod("()Z")
     runBackgroundServices = JavaMethod("(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")
+    cancelRunBackgroundServices = JavaMethod("()Z")
     getNeedsJobReschedule = JavaMethod("()Z")
+    setNeedsJobReschedule = JavaMethod("(Z)V")
 
 class IBackgroundService(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/core/internal/background/IBackgroundService"

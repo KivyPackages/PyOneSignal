@@ -3,9 +3,9 @@ from jnius import JavaClass, JavaInterface, MetaJavaClass, JavaMethod, JavaStati
 class BroadcastHelper(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/internal/badges/impl/shortcutbadger/util/BroadcastHelper"
     __javaconstructor__ = [("()V", False)]
+    resolveBroadcast = JavaStaticMethod("(Landroid/content/Context;Landroid/content/Intent;)Ljava/util/List;")
     canResolveBroadcast = JavaStaticMethod("(Landroid/content/Context;Landroid/content/Intent;)Z")
     sendIntentExplicitly = JavaStaticMethod("(Landroid/content/Context;Landroid/content/Intent;)V")
-    resolveBroadcast = JavaStaticMethod("(Landroid/content/Context;Landroid/content/Intent;)Ljava/util/List;")
 
 class CloseHelper(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/internal/badges/impl/shortcutbadger/util/CloseHelper"

@@ -11,5 +11,5 @@ class ADMMessageHandlerJob(JavaClass, metaclass=MetaJavaClass):
 class HmsMessageServiceOneSignal(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/services/HmsMessageServiceOneSignal"
     __javaconstructor__ = [("()V", False)]
-    onNewToken = JavaMultipleMethod([("(Ljava/lang/String;)V", False, False), ("(Ljava/lang/String;Landroid/os/Bundle;)V", False, False)])
     onMessageReceived = JavaMethod("(Lcom/huawei/hms/push/RemoteMessage;)V")
+    onNewToken = JavaMultipleMethod([("(Ljava/lang/String;Landroid/os/Bundle;)V", False, False), ("(Ljava/lang/String;)V", False, False)])

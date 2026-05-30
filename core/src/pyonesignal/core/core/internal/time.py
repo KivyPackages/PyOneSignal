@@ -2,5 +2,5 @@ from jnius import JavaClass, JavaInterface, MetaJavaClass, JavaMethod, JavaStati
 
 class ITime(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/core/internal/time/ITime"
-    getCurrentTimeMillis = JavaMethod("()J")
     getProcessUptimeMillis = JavaMethod("()J")
+    getCurrentTimeMillis = JavaMethod("()J")

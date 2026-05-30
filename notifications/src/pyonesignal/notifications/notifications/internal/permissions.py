@@ -6,5 +6,5 @@ class INotificationPermissionChangedHandler(JavaClass, metaclass=MetaJavaClass):
 
 class INotificationPermissionController(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/internal/permissions/INotificationPermissionController"
-    getCanRequestPermission = JavaMethod("()Z")
     prompt = JavaMethod("(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;")
+    getCanRequestPermission = JavaMethod("()Z")

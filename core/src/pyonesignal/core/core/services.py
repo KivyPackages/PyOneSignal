@@ -156,5 +156,5 @@ class SyncJobService(JavaClass, metaclass=MetaJavaClass):
     WIFI_RTT_RANGING_SERVICE = JavaStaticField("Ljava/lang/String;")
     WIFI_SERVICE = JavaStaticField("Ljava/lang/String;")
     WINDOW_SERVICE = JavaStaticField("Ljava/lang/String;")
-    onStartJob = JavaMethod("(Landroid/app/job/JobParameters;)Z")
     onStopJob = JavaMethod("(Landroid/app/job/JobParameters;)Z")
+    onStartJob = JavaMethod("(Landroid/app/job/JobParameters;)Z")

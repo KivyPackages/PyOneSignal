@@ -25,34 +25,34 @@ class OneSignalDispatchers(JavaClass, metaclass=MetaJavaClass):
 
 class ThreadUtilsKt(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/common/threading/ThreadUtilsKt"
+    suspendifyOnMain = JavaStaticMethod("(Lkotlin/jvm/functions/Function1;)V")
     launchOnIO = JavaStaticMethod("(Lkotlin/jvm/functions/Function1;)Lkotlinx/coroutines/Job;")
     launchOnDefault = JavaStaticMethod("(Lkotlin/jvm/functions/Function1;)Lkotlinx/coroutines/Job;")
+    suspendifyOnIO = JavaMultipleMethod([("(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V", True, False), ("(Lkotlin/jvm/functions/Function1;)V", True, False)])
     suspendifyWithCompletion = JavaStaticMethod("(ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V")
     suspendifyOnIO$default = JavaStaticMethod("(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V")
-    suspendifyOnIO = JavaMultipleMethod([("(Lkotlin/jvm/functions/Function1;)V", True, False), ("(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V", True, False)])
     suspendifyOnDefault = JavaStaticMethod("(Lkotlin/jvm/functions/Function1;)V")
     suspendifyOnSerialIO = JavaStaticMethod("(Lkotlin/jvm/functions/Function1;)V")
     runOnSerialIOIfBackgroundThreading = JavaStaticMethod("(Lkotlin/jvm/functions/Function0;)V")
     suspendifyWithCompletion$default = JavaStaticMethod("(ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V")
     suspendifyWithErrorHandling = JavaStaticMethod("(ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V")
     suspendifyWithErrorHandling$default = JavaStaticMethod("(ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V")
-    suspendifyOnMain = JavaStaticMethod("(Lkotlin/jvm/functions/Function1;)V")
 
 class ThreadingMode(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/common/threading/ThreadingMode"
     INSTANCE = JavaStaticField("Lcom/onesignal/common/threading/ThreadingMode;")
-    getUseBackgroundThreading = JavaMethod("()Z")
     setUseBackgroundThreading = JavaMethod("(Z)V")
     updateUseBackgroundThreading = JavaMethod("(ZLjava/lang/String;)V")
+    getUseBackgroundThreading = JavaMethod("()Z")
 
 class Waiter(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/common/threading/Waiter"
     __javaconstructor__ = [("()V", False)]
-    waitForWake = JavaMethod("(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")
     wake = JavaMethod("()V")
+    waitForWake = JavaMethod("(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")
 
 class WaiterWithValue(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/common/threading/WaiterWithValue"
     __javaconstructor__ = [("()V", False)]
-    waitForWake = JavaMethod("(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")
     wake = JavaMethod("(Ljava/lang/Object;)V")
+    waitForWake = JavaMethod("(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")

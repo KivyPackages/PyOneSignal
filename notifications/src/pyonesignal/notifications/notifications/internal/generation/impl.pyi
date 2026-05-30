@@ -12,15 +12,6 @@ from pyonesignal.core.internal.time.ITime import ITime
 
 # Forward declarations for Java types we do not wrap.
 # Bound as empty classes so annotations resolve in the IDE.
-class JSONObject:
-    """Forward declaration for ``org.json.JSONObject``.
-
-    This Java type is referenced by the wrapper but is not itself
-    wrapped by jni-wrap. At runtime pyjnius will hand you a
-    live ``autoclass('org.json.JSONObject')`` proxy; this empty class exists
-    purely so static type checkers and IDEs can resolve the name.
-    """
-    ...
 class Continuation:
     """Forward declaration for ``kotlin.coroutines.Continuation``.
 
@@ -32,10 +23,18 @@ class Continuation:
     See: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/coroutines/Continuation/
     """
     ...
+class JSONObject:
+    """Forward declaration for ``org.json.JSONObject``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('org.json.JSONObject')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
+    """
+    ...
 
 class NotificationGenerationProcessor:
     def __init__(self, p0: IApplicationService, p1: INotificationDisplayer, p2: ConfigModelStore, p3: INotificationRepository, p4: INotificationSummaryManager, p5: INotificationLifecycleService, p6: ITime) -> None: ...
-    def processNotificationData(self, p0: Context, p1: int, p2: JSONObject, p3: bool, p4: int, p5: Continuation) -> Any: ...
     @staticmethod
     def access$get_lifecycleService$p(p0: "NotificationGenerationProcessor") -> INotificationLifecycleService: ...
     @staticmethod
@@ -51,6 +50,7 @@ class NotificationGenerationProcessor:
     @staticmethod
     def access$processCollapseKey(p0: "NotificationGenerationProcessor", p1: NotificationGenerationJob, p2: Continuation) -> Any: ...
     def getCustomJSONObject(self, p0: JSONObject) -> JSONObject: ...
+    def processNotificationData(self, p0: Context, p1: int, p2: JSONObject, p3: bool, p4: int, p5: Continuation) -> Any: ...
 
 from typing import Any, ClassVar, overload
 from android.content.Context import Context
@@ -58,15 +58,6 @@ from androidx.work.WorkerParameters import WorkerParameters
 
 # Forward declarations for Java types we do not wrap.
 # Bound as empty classes so annotations resolve in the IDE.
-class JSONObject:
-    """Forward declaration for ``org.json.JSONObject``.
-
-    This Java type is referenced by the wrapper but is not itself
-    wrapped by jni-wrap. At runtime pyjnius will hand you a
-    live ``autoclass('org.json.JSONObject')`` proxy; this empty class exists
-    purely so static type checkers and IDEs can resolve the name.
-    """
-    ...
 class ConcurrentHashMap:
     """Forward declaration for ``java.util.concurrent.ConcurrentHashMap``.
 
@@ -76,6 +67,15 @@ class ConcurrentHashMap:
     purely so static type checkers and IDEs can resolve the name.
 
     See: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html
+    """
+    ...
+class JSONObject:
+    """Forward declaration for ``org.json.JSONObject``.
+
+    This Java type is referenced by the wrapper but is not itself
+    wrapped by jni-wrap. At runtime pyjnius will hand you a
+    live ``autoclass('org.json.JSONObject')`` proxy; this empty class exists
+    purely so static type checkers and IDEs can resolve the name.
     """
     ...
 class DefaultConstructorMarker:
@@ -104,9 +104,9 @@ class Continuation:
 class NotificationGenerationWorkManager:
     Companion: ClassVar[Any]
     def __init__(self) -> None: ...
-    def beginEnqueueingWork(self, p0: Context, p1: str, p2: int, p3: JSONObject, p4: int, p5: bool, p6: bool) -> bool: ...
     @staticmethod
     def access$getNotificationIds$cp() -> ConcurrentHashMap: ...
+    def beginEnqueueingWork(self, p0: Context, p1: str, p2: int, p3: JSONObject, p4: int, p5: bool, p6: bool) -> bool: ...
 
     class Companion:
         def __init__(self, p0: DefaultConstructorMarker) -> None: ...

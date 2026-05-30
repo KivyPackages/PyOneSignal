@@ -45,8 +45,6 @@ class IInAppMessageWillDisplayEvent(JavaClass, metaclass=MetaJavaClass):
 
 class IInAppMessagesManager(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/inAppMessages/IInAppMessagesManager"
-    addClickListener = JavaMethod("(Lcom/onesignal/inAppMessages/IInAppMessageClickListener;)V")
-    removeClickListener = JavaMethod("(Lcom/onesignal/inAppMessages/IInAppMessageClickListener;)V")
     removeLifecycleListener = JavaMethod("(Lcom/onesignal/inAppMessages/IInAppMessageLifecycleListener;)V")
     getPaused = JavaMethod("()Z")
     setPaused = JavaMethod("(Z)V")
@@ -56,6 +54,8 @@ class IInAppMessagesManager(JavaClass, metaclass=MetaJavaClass):
     removeTriggers = JavaMethod("(Ljava/util/Collection;)V")
     clearTriggers = JavaMethod("()V")
     addLifecycleListener = JavaMethod("(Lcom/onesignal/inAppMessages/IInAppMessageLifecycleListener;)V")
+    addClickListener = JavaMethod("(Lcom/onesignal/inAppMessages/IInAppMessageClickListener;)V")
+    removeClickListener = JavaMethod("(Lcom/onesignal/inAppMessages/IInAppMessageClickListener;)V")
 
 class InAppMessageActionUrlType(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/inAppMessages/InAppMessageActionUrlType"
@@ -63,10 +63,10 @@ class InAppMessageActionUrlType(JavaClass, metaclass=MetaJavaClass):
     IN_APP_WEBVIEW = JavaStaticField("Lcom/onesignal/inAppMessages/InAppMessageActionUrlType;")
     BROWSER = JavaStaticField("Lcom/onesignal/inAppMessages/InAppMessageActionUrlType;")
     REPLACE_CONTENT = JavaStaticField("Lcom/onesignal/inAppMessages/InAppMessageActionUrlType;")
-    getEntries = JavaStaticMethod("()Lkotlin/enums/EnumEntries;")
     toString = JavaMethod("()Ljava/lang/String;")
     values = JavaStaticMethod("()[Lcom/onesignal/inAppMessages/InAppMessageActionUrlType;")
     valueOf = JavaStaticMethod("(Ljava/lang/String;)Lcom/onesignal/inAppMessages/InAppMessageActionUrlType;")
+    getEntries = JavaStaticMethod("()Lkotlin/enums/EnumEntries;")
     access$getText$p = JavaStaticMethod("(Lcom/onesignal/inAppMessages/InAppMessageActionUrlType;)Ljava/lang/String;")
 
     class Companion(JavaClass, metaclass=MetaJavaClass):

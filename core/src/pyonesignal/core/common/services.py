@@ -7,10 +7,10 @@ class IServiceBuilder(JavaClass, metaclass=MetaJavaClass):
 
 class IServiceProvider(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/common/services/IServiceProvider"
-    hasService = JavaMethod("(Ljava/lang/Class;)Z")
-    getAllServices = JavaMethod("(Ljava/lang/Class;)Ljava/util/List;")
     getService = JavaMethod("(Ljava/lang/Class;)Ljava/lang/Object;")
     getServiceOrNull = JavaMethod("(Ljava/lang/Class;)Ljava/lang/Object;")
+    hasService = JavaMethod("(Ljava/lang/Class;)Z")
+    getAllServices = JavaMethod("(Ljava/lang/Class;)Ljava/util/List;")
 
 class ServiceBuilder(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/common/services/ServiceBuilder"
@@ -22,16 +22,16 @@ class ServiceProvider(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/common/services/ServiceProvider"
     __javaconstructor__ = [("(Ljava/util/List;)V", False)]
     Companion = JavaStaticField("Lcom/onesignal/common/services/ServiceProvider$Companion;")
+    getService = JavaMethod("(Ljava/lang/Class;)Ljava/lang/Object;")
+    getServiceOrNull = JavaMethod("(Ljava/lang/Class;)Ljava/lang/Object;")
+    hasService = JavaMethod("(Ljava/lang/Class;)Z")
+    getAllServices = JavaMethod("(Ljava/lang/Class;)Ljava/util/List;")
     hasService$com_onesignal_core = JavaMethod("()Z")
     getAllServices$com_onesignal_core = JavaMethod("()Ljava/util/List;")
     getService$com_onesignal_core = JavaMethod("()Ljava/lang/Object;")
     getServiceOrNull$com_onesignal_core = JavaMethod("()Ljava/lang/Object;")
     access$getIndent$cp = JavaStaticMethod("()Ljava/lang/String;")
     access$setIndent$cp = JavaStaticMethod("(Ljava/lang/String;)V")
-    hasService = JavaMethod("(Ljava/lang/Class;)Z")
-    getAllServices = JavaMethod("(Ljava/lang/Class;)Ljava/util/List;")
-    getService = JavaMethod("(Ljava/lang/Class;)Ljava/lang/Object;")
-    getServiceOrNull = JavaMethod("(Ljava/lang/Class;)Ljava/lang/Object;")
 
     class Companion(JavaClass, metaclass=MetaJavaClass):
         __javaclass__ = "com/onesignal/common/services/ServiceProvider$Companion"

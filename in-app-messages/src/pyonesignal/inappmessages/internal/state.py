@@ -3,8 +3,8 @@ from jnius import JavaClass, JavaInterface, MetaJavaClass, JavaMethod, JavaStati
 class InAppStateService(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/inAppMessages/internal/state/InAppStateService"
     __javaconstructor__ = [("()V", False)]
-    getPaused = JavaMethod("()Z")
     setPaused = JavaMethod("(Z)V")
+    getPaused = JavaMethod("()Z")
     getInAppMessageIdShowing = JavaMethod("()Ljava/lang/String;")
     getLastTimeInAppDismissed = JavaMethod("()Ljava/lang/Long;")
     setLastTimeInAppDismissed = JavaMethod("(Ljava/lang/Long;)V")

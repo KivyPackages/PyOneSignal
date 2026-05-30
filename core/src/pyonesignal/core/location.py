@@ -2,6 +2,6 @@ from jnius import JavaClass, JavaInterface, MetaJavaClass, JavaMethod, JavaStati
 
 class ILocationManager(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/location/ILocationManager"
-    requestPermission = JavaMethod("(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")
     isShared = JavaMethod("()Z")
     setShared = JavaMethod("(Z)V")
+    requestPermission = JavaMethod("(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")

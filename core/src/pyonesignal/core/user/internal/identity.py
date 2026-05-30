@@ -3,14 +3,14 @@ from jnius import JavaClass, JavaInterface, MetaJavaClass, JavaMethod, JavaStati
 class IdentityModel(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/user/internal/identity/IdentityModel"
     __javaconstructor__ = [("()V", False)]
-    setOnesignalId = JavaMethod("(Ljava/lang/String;)V")
+    remove = JavaMultipleMethod([("(Ljava/lang/String;)Ljava/lang/String;", False, False), ("(Ljava/lang/Object;)Ljava/lang/String;", False, False)])
+    get = JavaMultipleMethod([("(Ljava/lang/String;)Ljava/lang/String;", False, False), ("(Ljava/lang/Object;)Ljava/lang/String;", False, False)])
+    containsValue = JavaMultipleMethod([("(Ljava/lang/Object;)Z", False, False), ("(Ljava/lang/String;)Z", False, False)])
+    getOrDefault = JavaMultipleMethod([("(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;", False, False), ("(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;", False, False)])
     getOnesignalId = JavaMethod("()Ljava/lang/String;")
     getExternalId = JavaMethod("()Ljava/lang/String;")
     setExternalId = JavaMethod("(Ljava/lang/String;)V")
-    remove = JavaMultipleMethod([("(Ljava/lang/Object;)Ljava/lang/String;", False, False), ("(Ljava/lang/String;)Ljava/lang/String;", False, False)])
-    get = JavaMultipleMethod([("(Ljava/lang/Object;)Ljava/lang/String;", False, False), ("(Ljava/lang/String;)Ljava/lang/String;", False, False)])
-    containsValue = JavaMultipleMethod([("(Ljava/lang/Object;)Z", False, False), ("(Ljava/lang/String;)Z", False, False)])
-    getOrDefault = JavaMultipleMethod([("(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;", False, False), ("(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;", False, False)])
+    setOnesignalId = JavaMethod("(Ljava/lang/String;)V")
 
 class IdentityModelStore(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/user/internal/identity/IdentityModelStore"

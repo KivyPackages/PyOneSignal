@@ -3,7 +3,7 @@ from jnius import JavaClass, JavaInterface, MetaJavaClass, JavaMethod, JavaStati
 class PropertiesModel(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/user/internal/properties/PropertiesModel"
     __javaconstructor__ = [("()V", False)]
-    setOnesignalId = JavaMethod("(Ljava/lang/String;)V")
+    getCountry = JavaMethod("()Ljava/lang/String;")
     getOnesignalId = JavaMethod("()Ljava/lang/String;")
     setLanguage = JavaMethod("(Ljava/lang/String;)V")
     getTags = JavaMethod("()Lcom/onesignal/common/modeling/MapModel;")
@@ -21,9 +21,9 @@ class PropertiesModel(JavaClass, metaclass=MetaJavaClass):
     setLocationBackground = JavaMethod("(Ljava/lang/Boolean;)V")
     getLocationTimestamp = JavaMethod("()Ljava/lang/Long;")
     setLocationTimestamp = JavaMethod("(Ljava/lang/Long;)V")
-    getLanguage = JavaMethod("()Ljava/lang/String;")
     setTimezone = JavaMethod("(Ljava/lang/String;)V")
-    getCountry = JavaMethod("()Ljava/lang/String;")
+    setOnesignalId = JavaMethod("(Ljava/lang/String;)V")
+    getLanguage = JavaMethod("()Ljava/lang/String;")
 
 class PropertiesModelStore(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/user/internal/properties/PropertiesModelStore"

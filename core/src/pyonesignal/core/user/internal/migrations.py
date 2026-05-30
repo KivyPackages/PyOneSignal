@@ -3,8 +3,8 @@ from jnius import JavaClass, JavaInterface, MetaJavaClass, JavaMethod, JavaStati
 class IMigrationRecovery(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/user/internal/migrations/IMigrationRecovery"
     isInBadState = JavaMethod("()Z")
-    recover = JavaMethod("()V")
     recoveryMessage = JavaMethod("()Ljava/lang/String;")
+    recover = JavaMethod("()V")
 
 class MigrationRecovery(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/user/internal/migrations/MigrationRecovery"
@@ -15,16 +15,16 @@ class RecoverConfigPushSubscription(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/user/internal/migrations/RecoverConfigPushSubscription"
     __javaconstructor__ = [("(Lcom/onesignal/core/internal/config/ConfigModelStore;Lcom/onesignal/user/internal/subscriptions/SubscriptionModelStore;)V", False)]
     isInBadState = JavaMethod("()Z")
-    recover = JavaMethod("()V")
     recoveryMessage = JavaMethod("()Ljava/lang/String;")
+    recover = JavaMethod("()V")
     getActivePushSubscription = JavaMethod("()Lcom/onesignal/user/internal/subscriptions/SubscriptionModel;")
     access$get_subscriptionModelStore$p = JavaStaticMethod("(Lcom/onesignal/user/internal/migrations/RecoverConfigPushSubscription;)Lcom/onesignal/user/internal/subscriptions/SubscriptionModelStore;")
 
 class RecoverFromDroppedLoginBug(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/user/internal/migrations/RecoverFromDroppedLoginBug"
     __javaconstructor__ = [("(Lcom/onesignal/core/internal/operations/IOperationRepo;Lcom/onesignal/user/internal/identity/IdentityModelStore;Lcom/onesignal/core/internal/config/ConfigModelStore;)V", False)]
+    start = JavaMethod("()V")
     access$get_operationRepo$p = JavaStaticMethod("(Lcom/onesignal/user/internal/migrations/RecoverFromDroppedLoginBug;)Lcom/onesignal/core/internal/operations/IOperationRepo;")
     access$isInBadState = JavaStaticMethod("(Lcom/onesignal/user/internal/migrations/RecoverFromDroppedLoginBug;)Z")
     access$get_identityModelStore$p = JavaStaticMethod("(Lcom/onesignal/user/internal/migrations/RecoverFromDroppedLoginBug;)Lcom/onesignal/user/internal/identity/IdentityModelStore;")
     access$recoverByAddingBackDroppedLoginOperation = JavaStaticMethod("(Lcom/onesignal/user/internal/migrations/RecoverFromDroppedLoginBug;)V")
-    start = JavaMethod("()V")

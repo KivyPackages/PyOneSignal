@@ -8,14 +8,14 @@ class CacheKeys(JavaClass, metaclass=MetaJavaClass):
 
 class HttpResponse(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/core/internal/http/HttpResponse"
-    __javaconstructor__ = [("(ILjava/lang/String;Ljava/lang/Throwable;Ljava/lang/Integer;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V", False), ("(ILjava/lang/String;Ljava/lang/Throwable;Ljava/lang/Integer;Ljava/lang/Integer;)V", False)]
-    getThrowable = JavaMethod("()Ljava/lang/Throwable;")
+    __javaconstructor__ = [("(ILjava/lang/String;Ljava/lang/Throwable;Ljava/lang/Integer;Ljava/lang/Integer;)V", False), ("(ILjava/lang/String;Ljava/lang/Throwable;Ljava/lang/Integer;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V", False)]
+    getRetryAfterSeconds = JavaMethod("()Ljava/lang/Integer;")
+    getStatusCode = JavaMethod("()I")
     isSuccess = JavaMethod("()Z")
+    getThrowable = JavaMethod("()Ljava/lang/Throwable;")
+    getRetryLimit = JavaMethod("()Ljava/lang/Integer;")
     isClientError = JavaMethod("()Z")
     getPayload = JavaMethod("()Ljava/lang/String;")
-    getStatusCode = JavaMethod("()I")
-    getRetryAfterSeconds = JavaMethod("()Ljava/lang/Integer;")
-    getRetryLimit = JavaMethod("()Ljava/lang/Integer;")
 
 class IHttpClient(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/core/internal/http/IHttpClient"

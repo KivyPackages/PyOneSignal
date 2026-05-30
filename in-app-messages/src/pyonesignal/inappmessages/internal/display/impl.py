@@ -4,11 +4,11 @@ class InAppDisplayer(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/inAppMessages/internal/display/impl/InAppDisplayer"
     __javaconstructor__ = [("(Lcom/onesignal/core/internal/application/IApplicationService;Lcom/onesignal/inAppMessages/internal/lifecycle/IInAppLifecycleService;Lcom/onesignal/inAppMessages/internal/prompt/IInAppMessagePromptFactory;Lcom/onesignal/inAppMessages/internal/backend/IInAppBackendService;Lcom/onesignal/session/internal/influence/IInfluenceManager;Lcom/onesignal/core/internal/config/ConfigModelStore;Lcom/onesignal/core/internal/language/ILanguageContext;Lcom/onesignal/core/internal/time/ITime;)V", False)]
     Companion = JavaStaticField("Lcom/onesignal/inAppMessages/internal/display/impl/InAppDisplayer$Companion;")
+    access$showMessageContent = JavaStaticMethod("(Lcom/onesignal/inAppMessages/internal/display/impl/InAppDisplayer;Lcom/onesignal/inAppMessages/internal/InAppMessage;Lcom/onesignal/inAppMessages/internal/InAppMessageContent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")
+    access$initInAppMessage = JavaStaticMethod("(Lcom/onesignal/inAppMessages/internal/display/impl/InAppDisplayer;Landroid/app/Activity;Lcom/onesignal/inAppMessages/internal/InAppMessage;Lcom/onesignal/inAppMessages/internal/InAppMessageContent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")
     displayPreviewMessage = JavaMethod("(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")
     displayMessage = JavaMethod("(Lcom/onesignal/inAppMessages/internal/InAppMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")
     dismissCurrentInAppMessage = JavaMethod("()V")
-    access$showMessageContent = JavaStaticMethod("(Lcom/onesignal/inAppMessages/internal/display/impl/InAppDisplayer;Lcom/onesignal/inAppMessages/internal/InAppMessage;Lcom/onesignal/inAppMessages/internal/InAppMessageContent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")
-    access$initInAppMessage = JavaStaticMethod("(Lcom/onesignal/inAppMessages/internal/display/impl/InAppDisplayer;Landroid/app/Activity;Lcom/onesignal/inAppMessages/internal/InAppMessage;Lcom/onesignal/inAppMessages/internal/InAppMessageContent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")
 
     class Companion(JavaClass, metaclass=MetaJavaClass):
         __javaclass__ = "com/onesignal/inAppMessages/internal/display/impl/InAppDisplayer$Companion"
@@ -20,9 +20,9 @@ class OSPopupWindow(JavaClass, metaclass=MetaJavaClass):
     INPUT_METHOD_FROM_FOCUSABLE = JavaStaticField("I")
     INPUT_METHOD_NEEDED = JavaStaticField("I")
     INPUT_METHOD_NOT_NEEDED = JavaStaticField("I")
-    setWasDismissedManually = JavaMethod("(Ljava/lang/Boolean;)V")
-    dismiss = JavaMethod("()V")
     getWasDismissedManually = JavaMethod("()Ljava/lang/Boolean;")
+    dismiss = JavaMethod("()V")
+    setWasDismissedManually = JavaMethod("(Ljava/lang/Boolean;)V")
 
     class PopupWindowListener(JavaClass, metaclass=MetaJavaClass):
         __javaclass__ = "com/onesignal/inAppMessages/internal/display/impl/OSPopupWindow$PopupWindowListener"
@@ -203,9 +203,9 @@ class OSWebView(JavaClass, metaclass=MetaJavaClass):
     X = JavaStaticField("Landroid/util/Property;")
     Y = JavaStaticField("Landroid/util/Property;")
     Z = JavaStaticField("Landroid/util/Property;")
-    computeScroll = JavaMethod("()V")
     overScrollBy = JavaMethod("(IIIIIIIIZ)Z")
     scrollTo = JavaMethod("(II)V")
+    computeScroll = JavaMethod("()V")
 
 class OneSignalAnimate(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/inAppMessages/internal/display/impl/OneSignalAnimate"

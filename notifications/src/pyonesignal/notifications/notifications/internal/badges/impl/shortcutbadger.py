@@ -2,8 +2,8 @@ from jnius import JavaClass, JavaInterface, MetaJavaClass, JavaMethod, JavaStati
 
 class Badger(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/internal/badges/impl/shortcutbadger/Badger"
-    getSupportLaunchers = JavaMethod("()Ljava/util/List;")
     executeBadge = JavaMethod("(Landroid/content/Context;Landroid/content/ComponentName;I)V")
+    getSupportLaunchers = JavaMethod("()Ljava/util/List;")
 
 class ShortcutBadgeException(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/internal/badges/impl/shortcutbadger/ShortcutBadgeException"
@@ -11,9 +11,9 @@ class ShortcutBadgeException(JavaClass, metaclass=MetaJavaClass):
 
 class ShortcutBadger(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/internal/badges/impl/shortcutbadger/ShortcutBadger"
+    applyCountOrThrow = JavaStaticMethod("(Landroid/content/Context;I)V")
     applyCount = JavaStaticMethod("(Landroid/content/Context;I)Z")
     removeCount = JavaStaticMethod("(Landroid/content/Context;)Z")
     removeCountOrThrow = JavaStaticMethod("(Landroid/content/Context;)V")
     isBadgeCounterSupported = JavaStaticMethod("(Landroid/content/Context;)Z")
     applyNotification = JavaStaticMethod("(Landroid/content/Context;Landroid/app/Notification;I)V")
-    applyCountOrThrow = JavaStaticMethod("(Landroid/content/Context;I)V")

@@ -3,11 +3,11 @@ from jnius import JavaClass, JavaInterface, MetaJavaClass, JavaMethod, JavaStati
 class IOutcomeEvent(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/session/internal/outcomes/IOutcomeEvent"
     getTimestamp = JavaMethod("()J")
-    getSession = JavaMethod("()Lcom/onesignal/session/internal/influence/InfluenceType;")
     getName = JavaMethod("()Ljava/lang/String;")
+    getSession = JavaMethod("()Lcom/onesignal/session/internal/influence/InfluenceType;")
+    getWeight = JavaMethod("()F")
     getNotificationIds = JavaMethod("()Lorg/json/JSONArray;")
     getSessionTime = JavaMethod("()J")
-    getWeight = JavaMethod("()F")
 
 class IOutcomeEventsController(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/session/internal/outcomes/IOutcomeEventsController"

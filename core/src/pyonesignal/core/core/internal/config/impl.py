@@ -7,9 +7,9 @@ class ConfigModelStoreListener(JavaClass, metaclass=MetaJavaClass):
     start = JavaMethod("()V")
     onModelUpdated = JavaMethod("(Lcom/onesignal/common/modeling/ModelChangedArgs;Ljava/lang/String;)V")
     onModelReplaced = JavaMultipleMethod([("(Lcom/onesignal/common/modeling/Model;Ljava/lang/String;)V", False, False), ("(Lcom/onesignal/core/internal/config/ConfigModel;Ljava/lang/String;)V", False, False)])
+    access$get_paramsBackendService$p = JavaStaticMethod("(Lcom/onesignal/core/internal/config/impl/ConfigModelStoreListener;)Lcom/onesignal/core/internal/backend/IParamsBackendService;")
     access$get_configModelStore$p = JavaStaticMethod("(Lcom/onesignal/core/internal/config/impl/ConfigModelStoreListener;)Lcom/onesignal/core/internal/config/ConfigModelStore;")
     access$get_subscriptionManager$p = JavaStaticMethod("(Lcom/onesignal/core/internal/config/impl/ConfigModelStoreListener;)Lcom/onesignal/user/internal/subscriptions/ISubscriptionManager;")
-    access$get_paramsBackendService$p = JavaStaticMethod("(Lcom/onesignal/core/internal/config/impl/ConfigModelStoreListener;)Lcom/onesignal/core/internal/backend/IParamsBackendService;")
 
     class Companion(JavaClass, metaclass=MetaJavaClass):
         __javaclass__ = "com/onesignal/core/internal/config/impl/ConfigModelStoreListener$Companion"

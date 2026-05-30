@@ -19,8 +19,8 @@ class INotificationDisplayer(JavaClass, metaclass=MetaJavaClass):
 
 class ISummaryNotificationDisplayer(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/internal/display/ISummaryNotificationDisplayer"
-    createSingleNotificationBeforeSummaryBuilder = JavaMethod("(Lcom/onesignal/notifications/internal/common/NotificationGenerationJob;Landroidx/core/app/NotificationCompat$Builder;)Landroid/app/Notification;")
+    createSummaryNotification = JavaMethod("(Lcom/onesignal/notifications/internal/common/NotificationGenerationJob;Lcom/onesignal/notifications/internal/display/impl/NotificationDisplayBuilder$OneSignalNotificationBuilder;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;")
     updateSummaryNotification = JavaMethod("(Lcom/onesignal/notifications/internal/common/NotificationGenerationJob;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;")
     createGenericPendingIntentsForGroup = JavaMethod("(Landroidx/core/app/NotificationCompat$Builder;Lcom/onesignal/notifications/internal/display/impl/IntentGeneratorForAttachingToNotifications;Lorg/json/JSONObject;Ljava/lang/String;I)V")
+    createSingleNotificationBeforeSummaryBuilder = JavaMethod("(Lcom/onesignal/notifications/internal/common/NotificationGenerationJob;Landroidx/core/app/NotificationCompat$Builder;)Landroid/app/Notification;")
     createGrouplessSummaryNotification = JavaMethod("(Lcom/onesignal/notifications/internal/common/NotificationGenerationJob;Lcom/onesignal/notifications/internal/display/impl/IntentGeneratorForAttachingToNotifications;IILkotlin/coroutines/Continuation;)Ljava/lang/Object;")
-    createSummaryNotification = JavaMethod("(Lcom/onesignal/notifications/internal/common/NotificationGenerationJob;Lcom/onesignal/notifications/internal/display/impl/NotificationDisplayBuilder$OneSignalNotificationBuilder;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;")

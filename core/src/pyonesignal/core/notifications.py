@@ -9,9 +9,9 @@ class BackgroundImageLayout(JavaClass, metaclass=MetaJavaClass):
 
 class IActionButton(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/IActionButton"
-    getIcon = JavaMethod("()Ljava/lang/String;")
-    getText = JavaMethod("()Ljava/lang/String;")
     getId = JavaMethod("()Ljava/lang/String;")
+    getText = JavaMethod("()Ljava/lang/String;")
+    getIcon = JavaMethod("()Ljava/lang/String;")
 
 class IDisplayableMutableNotification(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/IDisplayableMutableNotification"
@@ -26,9 +26,11 @@ class IMutableNotification(JavaClass, metaclass=MetaJavaClass):
 
 class INotification(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/INotification"
-    getTtl = JavaMethod("()I")
+    getPriority = JavaMethod("()I")
+    getTitle = JavaMethod("()Ljava/lang/String;")
     getAndroidNotificationId = JavaMethod("()I")
     getNotificationId = JavaMethod("()Ljava/lang/String;")
+    getTtl = JavaMethod("()I")
     getTemplateName = JavaMethod("()Ljava/lang/String;")
     getTemplateId = JavaMethod("()Ljava/lang/String;")
     getBody = JavaMethod("()Ljava/lang/String;")
@@ -36,8 +38,8 @@ class INotification(JavaClass, metaclass=MetaJavaClass):
     getSmallIcon = JavaMethod("()Ljava/lang/String;")
     getLargeIcon = JavaMethod("()Ljava/lang/String;")
     getBigPicture = JavaMethod("()Ljava/lang/String;")
-    getSmallIconAccentColor = JavaMethod("()Ljava/lang/String;")
     getLaunchURL = JavaMethod("()Ljava/lang/String;")
+    getSmallIconAccentColor = JavaMethod("()Ljava/lang/String;")
     getSound = JavaMethod("()Ljava/lang/String;")
     getLedColor = JavaMethod("()Ljava/lang/String;")
     getLockScreenVisibility = JavaMethod("()I")
@@ -50,8 +52,6 @@ class INotification(JavaClass, metaclass=MetaJavaClass):
     getSentTime = JavaMethod("()J")
     getGroupedNotifications = JavaMethod("()Ljava/util/List;")
     getRawPayload = JavaMethod("()Ljava/lang/String;")
-    getTitle = JavaMethod("()Ljava/lang/String;")
-    getPriority = JavaMethod("()I")
 
     class DefaultImpls(JavaClass, metaclass=MetaJavaClass):
         __javaclass__ = "com/onesignal/notifications/INotification$DefaultImpls"
@@ -59,8 +59,8 @@ class INotification(JavaClass, metaclass=MetaJavaClass):
 
 class INotificationClickEvent(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/INotificationClickEvent"
-    getNotification = JavaMethod("()Lcom/onesignal/notifications/INotification;")
     getResult = JavaMethod("()Lcom/onesignal/notifications/INotificationClickResult;")
+    getNotification = JavaMethod("()Lcom/onesignal/notifications/INotification;")
 
 class INotificationClickListener(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/INotificationClickListener"
@@ -78,8 +78,8 @@ class INotificationLifecycleListener(JavaClass, metaclass=MetaJavaClass):
 class INotificationReceivedEvent(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/INotificationReceivedEvent"
     getContext = JavaMethod("()Landroid/content/Context;")
-    preventDefault = JavaMultipleMethod([("(Z)V", False, False), ("()V", False, False)])
     getNotification = JavaMethod("()Lcom/onesignal/notifications/IDisplayableMutableNotification;")
+    preventDefault = JavaMultipleMethod([("(Z)V", False, False), ("()V", False, False)])
 
 class INotificationServiceExtension(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/INotificationServiceExtension"
@@ -87,13 +87,14 @@ class INotificationServiceExtension(JavaClass, metaclass=MetaJavaClass):
 
 class INotificationWillDisplayEvent(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/INotificationWillDisplayEvent"
-    preventDefault = JavaMultipleMethod([("()V", False, False), ("(Z)V", False, False)])
     getNotification = JavaMethod("()Lcom/onesignal/notifications/IDisplayableNotification;")
+    preventDefault = JavaMultipleMethod([("()V", False, False), ("(Z)V", False, False)])
 
 class INotificationsManager(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/INotificationsManager"
-    getCanRequestPermission = JavaMethod("()Z")
+    getPermission = JavaMethod("()Z")
     requestPermission = JavaMethod("(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;")
+    getCanRequestPermission = JavaMethod("()Z")
     removeNotification = JavaMethod("(I)V")
     removeGroupedNotifications = JavaMethod("(Ljava/lang/String;)V")
     clearAllNotifications = JavaMethod("()V")
@@ -103,7 +104,6 @@ class INotificationsManager(JavaClass, metaclass=MetaJavaClass):
     removeForegroundLifecycleListener = JavaMethod("(Lcom/onesignal/notifications/INotificationLifecycleListener;)V")
     addClickListener = JavaMethod("(Lcom/onesignal/notifications/INotificationClickListener;)V")
     removeClickListener = JavaMethod("(Lcom/onesignal/notifications/INotificationClickListener;)V")
-    getPermission = JavaMethod("()Z")
 
 class IPermissionObserver(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = "com/onesignal/notifications/IPermissionObserver"
